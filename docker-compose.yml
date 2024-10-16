@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: frontend-repository-cronograma-teletrabajo
+    container_name: procesos-cronograma-teletrabajo-docker-nextjs-1
+    ports:
+      - "3022:3000"
+    env_file:
+      - .env
+    networks:
+      my_new_network:
+        ipv4_address: 10.9.10.10  # Cambias la IP aquí
+
+networks:
+  my_new_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.9.0.0/16  # Mantienes esta subred
