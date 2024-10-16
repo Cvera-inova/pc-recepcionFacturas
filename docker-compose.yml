@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    image: frontend-repository-cronograma-teletrabajo
-    container_name: procesos-cronograma-teletrabajo-docker-nextjs-1
+    image: frontend-repository-cronograma-facturas
+    container_name: procesos-cronograma-facturas-docker-nextjs-1
     ports:
       - "3022:3000"
     env_file:
